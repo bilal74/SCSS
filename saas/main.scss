@@ -1,0 +1,107 @@
+@import "mixin";
+@import "var";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 60.5%;   //10px 
+}
+
+// @mixin flexprob{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: column;
+// } 
+
+// // @mixin commoncode {
+// @mixin commoncode($para1) {
+//     color: #222f3e;
+//     font-size: 3rem+3rem;
+//     // letter-spacing: 0.3rem;
+//     letter-spacing: $para1;
+//     text-transform: capitalize;
+// }
+
+.main_header{
+    width: 100%;
+    height: 100vh;
+    // display: flex;
+    // place-items: center;
+    // justify-content: center;
+    // align-items: center;
+    // flex-direction: column;
+    @include flexprob;
+    background: #10ac84;
+    
+    h1 {
+        // color: red;
+        // font-size: 5rem;
+        // letter-spacing: 0.3rem;
+        @include commoncode(0.8rem);
+        &:hover{
+            color: wheat;
+        }
+        &::after{   //sudu selectors
+            content: " Bilal";
+        }
+    }
+    
+    p {
+        // color: red;
+        // font-size: 3rem + 3rem;
+        @include commoncode(0.3rem);
+        &:hover{
+            color: wheat;
+        }
+    }
+}
+    
+//Live saas compiler
+// 1. Operators
+// operator use kr skte h 
+// font-size: 5rem + 5rem;
+// font-size: 15rem - 5rem;
+// -----------
+
+// 2. Variables 
+// $bg-color: #2e86de;
+// ese define kr skte h
+
+// background: $bg-color;
+// ------------
+
+// 3. nesting 
+// h1 {
+//     color: red;
+//     font-size: 10rem;
+//     &:hover{
+//         color: wheat;
+//     }
+//     &::after{   //sudu selectors
+//         content: " Bilal";
+//     }
+// }
+// ------------------------- 
+
+// 4. Mixin and (5)Parameter
+// Jo code bar2 likhna padta h use ek bar likh k save kr lena 
+// @mixin flexprob{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: column;
+// }
+
+// @include flexprob;
+// ---------------- 
+
+// 6. scss partials (code ko alag2 file me krna)
+// underscore(_) use krna pdega, file bnane k lye(compile nhi krega)
+
+
